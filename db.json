@@ -1,0 +1,39 @@
+{
+  "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
+  "title": "You Don't Know JS - Quiz",
+  "description": "Teste os seus conhecimentos sobre Javascript e vamos ver o quanto você realmente sabe sobre JS.",
+  "questions": [
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Como fazer um seletor por id via CSS?",
+      "description": "Essa é pra aquecer",
+      "answer": 2,
+      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+        "background: linear-gradient(#e66465, #9198e5);",
+        "background: gradient(#e66465, #9198e5);"
+      ]
+    }
+  ],
+  "external": [""],
+  "theme": {
+    "colors": {
+      "primary": "#4ca9df",
+      "secondary": "#ff0078",
+      "mainBg": "#171B35",
+      "contrastText": "#FFFFFF",
+      "wrong": "#FF5722",
+      "success": "#4CAF50",
+      "bg_primary": "background-image: linear-gradient(45deg, #4ca9df, #a1ffb3)",
+      "bg_secondary": "background-image: linear-gradient(45deg, #ff0078, #f6efa7)",
+      "bg_teste": "background-color: #4158d0; background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);"
+    },
+    "borderRadius": "4px"
+  }
+}
