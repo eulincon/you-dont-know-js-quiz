@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import db from '../db.json'
 
 function Quiz() {
   return (

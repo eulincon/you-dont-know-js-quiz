@@ -1,11 +1,12 @@
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 import styled from 'styled-components'
-import Widget from '../src/components/Widget'
 import db from '../db.json'
-import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
+import QuizBackground from '../src/components/QuizBackground'
 import QuizLogo from '../src/components/QuizLogo'
-import Head from 'next/head'
+import Widget from '../src/components/Widget'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -17,55 +18,39 @@ export const QuizContainer = styled.div`
     padding: 15px;
   }
 `
-
 export default function Home() {
+  const router = useRouter()
+  const [name, setName] = useState<string>('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    router.push(`/quiz?name=${name}`)
+    console.log(event)
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>JS Quiz</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {/* <!-- Primary Meta Tags --> */}
-        <title>JS Quiz</title>
-        <meta name="title" content="JS Quiz" />
-        <meta name="description" content="" />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://you-dont-know-js-quiz.vercel.app/"
-        />
-        <meta property="og:title" content="JS Quiz" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
-
-        {/* <!-- Twitter --> */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://you-dont-know-js-quiz.vercel.app/"
-        />
-        <meta property="twitter:title" content="JS Quiz" />
-        <meta property="twitter:description" content="" />
-        <meta property="twitter:image" content="" />
-      </Head>
-      <QuizLogo />
       <QuizContainer>
+        <QuizLogo />
         <Widget>
-          <Widget.Header>sd</Widget.Header>
+          <Widget.Header>You don&apos;t Know JS!</Widget.Header>
           <Widget.Content>
-            <h1>This is realy Js</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
-              similique magni enim esse praesentium fuga necessitatibus
-              obcaecati, sit harum eum quia, blanditiis nisi quis! Architecto
-              dolorum ipsa nam molestias repudiandae.
-            </p>
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <input
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Diz aí teu nome"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
         <Widget>
-          <Widget.Header>sd</Widget.Header>
+          <Widget.Header>Quizez da Galera</Widget.Header>
           <Widget.Content>
             <h1>This is realy Js</h1>
             <p>
