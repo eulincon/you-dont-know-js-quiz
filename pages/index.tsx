@@ -4,16 +4,8 @@ import db from '../db.json'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
-import Link from 'next/link'
 import QuizLogo from '../src/components/QuizLogo'
-
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  /* background-image: url('../src/assets/img/background.png'); */
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-`
+import Head from 'next/head'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -29,6 +21,34 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>JS Quiz</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        {/* <!-- Primary Meta Tags --> */}
+        <title>JS Quiz</title>
+        <meta name="title" content="JS Quiz" />
+        <meta name="description" content="" />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://you-dont-know-js-quiz.vercel.app/"
+        />
+        <meta property="og:title" content="JS Quiz" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://you-dont-know-js-quiz.vercel.app/"
+        />
+        <meta property="twitter:title" content="JS Quiz" />
+        <meta property="twitter:description" content="" />
+        <meta property="twitter:image" content="" />
+      </Head>
       <QuizLogo />
       <QuizContainer>
         <Widget>
