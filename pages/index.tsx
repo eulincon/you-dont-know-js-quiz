@@ -4,9 +4,12 @@ import db from '../db.json'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
+import Link from 'next/link'
+import QuizLogo from '../src/components/QuizLogo'
 
 const BackgroundImage = styled.div`
   background-image: url(${db.bg});
+  /* background-image: url('../src/assets/img/background.png'); */
   flex: 1;
   background-size: cover;
   background-position: center;
@@ -26,6 +29,7 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <QuizLogo />
       <QuizContainer>
         <Widget>
           <Widget.Header>sd</Widget.Header>
@@ -39,15 +43,20 @@ export default function Home() {
             </p>
           </Widget.Content>
         </Widget>
+
         <Widget>
-          <h1>This is realy Js</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
-            similique magni enim esse praesentium fuga necessitatibus obcaecati,
-            sit harum eum quia, blanditiis nisi quis! Architecto dolorum ipsa
-            nam molestias repudiandae.
-          </p>
+          <Widget.Header>sd</Widget.Header>
+          <Widget.Content>
+            <h1>This is realy Js</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+              similique magni enim esse praesentium fuga necessitatibus
+              obcaecati, sit harum eum quia, blanditiis nisi quis! Architecto
+              dolorum ipsa nam molestias repudiandae.
+            </p>
+          </Widget.Content>
         </Widget>
+
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/zlincon" />
