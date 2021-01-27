@@ -1,9 +1,12 @@
+// import PropTypes from 'prop-types'
+// import React from 'react'
 import styled from 'styled-components'
 
-import React from 'react'
-import PropTypes from 'prop-types'
+type Props = {
+  className: string
+}
 
-function Logo({ className }) {
+function Logo({ className }: Props) {
   return (
     <svg
       className={className}
@@ -78,10 +81,6 @@ function Logo({ className }) {
       </defs>
     </svg>
   )
-}
-
-Logo.propTypes = {
-  className: PropTypes.string.isRequired,
 }
 
 const QuizLogo = styled(Logo)`

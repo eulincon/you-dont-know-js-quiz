@@ -1,7 +1,5 @@
 // src/components/GitHubCorner/index.js
-import React from 'react'
 import styled from 'styled-components'
-import { Url } from 'url'
 
 const Wrapper = styled.div`
   position: absolute;

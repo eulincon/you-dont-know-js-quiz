@@ -25,7 +25,7 @@
   "external": [""],
   "theme": {
     "colors": {
-      "primary": "#4ca9df",
+      "primary": "#7ac3ec",
       "secondary": "#fda766",
       "mainBg": "#171B35",
       "contrastText": "#FFFFFF",

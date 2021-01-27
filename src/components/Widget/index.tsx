@@ -33,7 +33,7 @@ Widget.Header = styled.header`
   /* ${({ theme }) => theme.colors.bg_teste}; */
   /* background-color: ${({ theme }) => theme.colors.primary}; */
 
-  background-image: linear-gradient(182deg, #0fe6af, #fda766);
+  background-image: linear-gradient(182deg, #7ac3ec, #fda766);
   background-size: 100% 400%;
 
   -webkit-animation: bg_gradient_animator 2s ease infinite;
@@ -90,6 +90,24 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+`
+
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: 0.3s;
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
   }
 `
 
