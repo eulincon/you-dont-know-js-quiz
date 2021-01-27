@@ -23,35 +23,40 @@ type Question = {
     alternatives: string[]
   }
   questionIndex: number
-  handleSubmit: () => void
+  totalQuestions: number
+  onSubmit: () => void
 }
 
 const QuestionWidget = ({
   question,
   questionIndex,
-  handleSubmit,
+  totalQuestions,
+  onSubmit,
 }: Question) => {
   const questionName = `question__${questionIndex}`
 
-  const handleSubmit = (e) => {
+  const handleSubmitQuestion = (e) => {
     e.preventDefault()
+    onSubmit()
   }
 
   return (
     <Widget>
       <Widget.Header>
         {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-        {`Pergunta ${questionIndex + 1} de ${db.questions.length}`}
+        {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
       </Widget.Header>
-      <img
-        src={question.image}
-        alt="Descrição"
-        style={{ width: '100%', height: '150px', objectFit: 'cover' }}
-      />
+      {question.image && (
+        <img
+          src={question.image}
+          alt="Descrição"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      )}
       <Widget.Content>
         <h2>{question.title}</h2>
         <p>{question.description}</p>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmitQuestion(e)}>
           {question.alternatives.map((alternative, alternativeIndex) => (
             <Widget.Topic
               key={[alternativeIndex]}
@@ -81,8 +86,9 @@ const screenStates = {
 
 function QuizPage() {
   const [screenState, setScreenState] = useState(screenStates.LOADING)
-  const [questionIndex, setQuestionIndex] = useState(0)
-  const question = db.questions[questionIndex]
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const question = db.questions[currentQuestion]
+  const totalQuestions = db.questions.length
 
   useEffect(() => {
     setTimeout(() => {
@@ -90,8 +96,13 @@ function QuizPage() {
     }, 1000)
   }, [])
 
-  function handleSubmit() {
-    setQuestionIndex(questionIndex + 1)
+  function handleSubmitQuiz() {
+    const nextQuestion = currentQuestion + 1
+    if (nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion)
+    } else {
+      setScreenState(screenStates.RESULT)
+    }
   }
 
   return (
@@ -101,8 +112,9 @@ function QuizPage() {
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
             question={question}
-            questionIndex={questionIndex}
-            handleSubmit={handleSubmit}
+            questionIndex={currentQuestion}
+            onSubmit={handleSubmitQuiz}
+            totalQuestions={totalQuestions}
           />
         )}
         {screenState === screenStates.LOADING && <LoadingWidget />}

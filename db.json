@@ -5,21 +5,104 @@
   "description": "Teste os seus conhecimentos sobre Javascript e vamos ver o quanto você realmente sabe sobre JS.",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
-      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+      "image": "./assets/img/questions/q1.png",
+      "title": "What happens when this code is executed:",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "1, 2, 3, 4, 5 are printed all at 6 seconds",
+        "6 is printed 5 times at one second intervals",
+        "6 is printed 5 times all at 6 seconds",
+        "1, 2, 3, 4, 5 are printed each at one second intervals"
+      ],
+      "explanation": "setTimeout is executed immediately which means the i in i*1000 is what you would expect. However, timer does not get executed immediately. By the time timer is executed, the loop is finished, and i has a value of 6."
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "",
+      "title": "Transpiling is transforming your ES6+ code into equivalent code that works in ES5 environments.",
+      "description": "",
+      "answer": 0,
+      "alternatives": ["True", "False"],
+      "explanation": "The idea behind a technique called transpiling (transformation + compiling) is to use a special tool to transform your ES6 code into equivalent (or close!) matches that work in ES5 environments."
+    },
+    {
+      "image": "",
+      "title": "What is closure?",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "When a function is nested within another function",
+        "When a function returns another function, it is said to have a closure over the second function",
+        "The ability of a function to access its lexical scope when that function is executing outside its lexical scope.",
+        "When a function is used as a callback"
+      ],
+      "explanation": "Another way to explain closure is to say that functions always have access to their lexical scope, no matter how or when they are called."
+    },
+    {
+      "image": "",
+      "title": "What do async functions return?",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "an object",
+        "a callback",
+        "a promise",
+        "a resolved promise"
+      ],
+      "explanation": "async functions return a promise which can then be consumed via await or with .then()"
+    },
+    {
+      "image": "",
+      "title": "The await keyword can only be used inside an async function",
+      "description": "",
+      "answer": 0,
+      "alternatives": ["True", "False"],
+      "explanation": "The await expression causes async function execution to pause until a Promise is resolved, that is fulfilled or rejected, and to resume execution of the async function after fulfillment. When resumed, the value of the await expression is that of the fulfilled Promise ."
+    },
+    {
+      "image": "./assets/img/questions/q2.png",
+      "title": "What will be logged to the console when the following code is executed:",
+      "description": "",
+      "answer": 1,
+      "alternatives": ["4", "1 2 3 4", "3 4", "TypeError"],
+      "explanation": "The spread operator here works similar to that with arrays."
+    },
+    {
+      "image": "./assets/img/questions/q3.png",
+      "title": "It is invalid in JS to create a standalone block statement like the following: ",
+      "description": "",
+      "answer": 1,
+      "alternatives": ["True", "False"],
+      "explanation": "It's not very common or idiomatic thus far in JS to use a standalone { .. } block, but it's always been valid"
+    },
+    {
+      "image": "./assets/img/questions/q4.png",
+      "title": "What will be logged to the console when the following code is executed?",
+      "description": "",
       "answer": 0,
       "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
-      ]
+        "undefined / ReferenceError",
+        "undefined / undefined",
+        "ReferenceError / ReferenceError",
+        "ReferenceError / undefined"
+      ],
+      "explanation": "Accessing a let-declared variable earlier than its let .. declaration/initialization causes an error, whereas with var declarations the ordering doesn’t matter"
+    },
+    {
+      "image": "./assets/img/questions/q5.png",
+      "title": "What will be logged to the console when the following code is executed:",
+      "description": "",
+      "answer": 0,
+      "alternatives": ["true", "false", "undefined", "TypeError"],
+      "explanation": "It would have been nice if typeof null returned \"null\", but this original bug in JS has persisted for nearly two decades, and will likely never be fixed because there's too much existing web content that relies on its buggy behavior that \"fixing\" the bug would create more \"bugs\" and break a lot of web software."
+    },
+    {
+      "image": "./assets/img/questions/q6.png",
+      "title": "What will be logged to the console when the following code is executed:",
+      "description": "",
+      "answer": 3,
+      "alternatives": ["undefined", "TypeError", "1", "2"],
+      "explanation": "The function object has a length property set to the number of formal parameters it is declared with."
     }
   ],
   "external": [""],
