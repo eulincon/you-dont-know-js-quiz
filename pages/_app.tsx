@@ -35,8 +35,12 @@ export default function App({ Component, pageProps }) {
         <title>You Dont Know JS - Quiz</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <!-- Primary Meta Tags --> */}
-        <meta name="title" content="JS Quiz" />
-        <meta name="description" content="" />
+        <title>You Dont Know JS - Quiz</title>
+        <meta name="title" content="You Dont Know JS - Quiz" />
+        <meta
+          name="description"
+          content="Desafie-se em seus conhecimentos sobre Javascript."
+        />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
@@ -44,9 +48,12 @@ export default function App({ Component, pageProps }) {
           property="og:url"
           content="https://you-dont-know-js-quiz.vercel.app/"
         />
-        <meta property="og:title" content="JS Quiz" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:title" content="You Dont Know JS - Quiz" />
+        <meta
+          property="og:description"
+          content="Desafie-se em seus conhecimentos sobre Javascript."
+        />
+        <meta property="og:image" content="/assets/img/background.jpg" />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -54,14 +61,12 @@ export default function App({ Component, pageProps }) {
           property="twitter:url"
           content="https://you-dont-know-js-quiz.vercel.app/"
         />
-        <meta property="twitter:title" content="JS Quiz" />
-        <meta property="twitter:description" content="" />
-        <meta property="twitter:image" content="" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Poppins:wght@400;700&display=swap"
-          rel="stylesheet"
+        <meta property="twitter:title" content="You Dont Know JS - Quiz" />
+        <meta
+          property="twitter:description"
+          content="Desafie-se em seus conhecimentos sobre Javascript."
         />
+        <meta property="twitter:image" content="/assets/img/background.jpg" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
