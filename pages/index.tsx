@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import db from '../db.json'
@@ -5,6 +6,7 @@ import Button from '../src/components/Button'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
 import Input from '../src/components/Input'
+import Link from '../src/components/Link'
 import QuizBackground from '../src/components/QuizBackground'
 import QuizContainer from '../src/components/QuizContainer'
 import QuizLogo from '../src/components/QuizLogo'
@@ -24,7 +26,16 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>You don&apos;t Know JS!</Widget.Header>
           <Widget.Content>
             <form onSubmit={(e) => handleSubmit(e)}>
@@ -42,16 +53,39 @@ export default function Home() {
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>Quizez da Galera</Widget.Header>
           <Widget.Content>
-            <h1>This is realy Js</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
-              similique magni enim esse praesentium fuga necessitatibus
-              obcaecati, sit harum eum quia, blanditiis nisi quis! Architecto
-              dolorum ipsa nam molestias repudiandae.
-            </p>
+            <ul>
+              {db.external.map((linkExternal) => {
+                const [projectName, githubUsername] = linkExternal
+                  .replace(/\/|https:|\.vercel\.app/g, '')
+                  .split('.')
+                return (
+                  <li key={linkExternal}>
+                    <Widget.Topic
+                      as={Link}
+                      // style={{
+                      //   pointerEvents: 'none',
+                      //   cursor: 'default',
+                      // }}
+                      href={`/quiz/${projectName}___${githubUsername}`}
+                    >
+                      {`${githubUsername}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                )
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
 

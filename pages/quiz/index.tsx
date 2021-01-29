@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import db from '../db.json'
-import AlternativesForm from '../src/components/AlternativesForm'
-import Button from '../src/components/Button'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizBackground from '../src/components/QuizBackground'
-import QuizContainer from '../src/components/QuizContainer'
-import QuizLogo from '../src/components/QuizLogo'
-import Widget from '../src/components/Widget'
+import db from '../../db.json'
+import AlternativesForm from '../../src/components/AlternativesForm'
+import Button from '../../src/components/Button'
+import GitHubCorner from '../../src/components/GitHubCorner'
+import QuizBackground from '../../src/components/QuizBackground'
+import QuizContainer from '../../src/components/QuizContainer'
+import QuizLogo from '../../src/components/QuizLogo'
+import Widget from '../../src/components/Widget'
 
 type Props = {
   results: boolean[]
